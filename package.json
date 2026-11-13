@@ -1,0 +1,35 @@
+{
+  "name": "inclusivecare",
+  "private": true,
+  "version": "0.1.0",
+  "description": "InclusiveCare – digital platform for people with disabilities",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "infra:up": "docker compose up -d",
+    "infra:down": "docker compose down",
+    "dev:api": "npm run start:dev -w api",
+    "dev:web": "npm run start -w web",
+    "build": "npm run build -w api && npm run build -w web",
+    "test": "npm run test -w api && npm run test -w web",
+    "test:e2e": "npm run test:e2e -w api",
+    "lint": "npm run lint -w api",
+    "api:types": "npm run build -w api && npm run openapi:export -w api -- ../web/openapi.json && npm run api:types -w web",
+    "test:api": "npm run test -w api && npm run test:e2e -w api",
+    "test:browser": "playwright test --config e2e/playwright.config.ts"
+  },
+  "allowScripts": {
+    "prisma@7.10.1": true,
+    "@prisma/engines@7.10.1": true,
+    "esbuild@0.28.2": true,
+    "argon2@0.45.2": true
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0"
+  }
+}

@@ -1,0 +1,17 @@
+/// Append-only record of sensitive operations. Rows are never updated.
+/// actorId is deliberately not a foreign key: the trail must outlive accounts.
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  actorId    String?  @map("actor_id") @db.Uuid
+  action     String   @db.VarChar(80)
+  targetType String   @map("target_type") @db.VarChar(40)
+  targetId   String?  @map("target_id") @db.VarChar(64)
+  metadata   Json?
+  ipAddress  String?  @map("ip_address") @db.VarChar(45)
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@index([targetType, targetId])
+  @@index([actorId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}

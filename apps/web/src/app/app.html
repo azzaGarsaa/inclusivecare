@@ -1,0 +1,87 @@
+<div class="app" [dir]="language.dir()" *transloco="let t">
+  <a class="skip-link" href="#main" (click)="skipToContent($event)">{{
+    t('shell.skipToContent')
+  }}</a>
+
+  <header class="app-header">
+    <div class="container header-inner">
+      <a class="brand" routerLink="/">InclusiveCare</a>
+
+      <nav [attr.aria-label]="t('shell.mainNavigation')">
+        <ul class="nav-list">
+          <li>
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ariaCurrentWhenActive="page"
+            >
+              {{ t('nav.home') }}
+            </a>
+          </li>
+          @if (auth.isSignedIn()) {
+            <li>
+              <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">{{
+                t('nav.dashboard')
+              }}</a>
+            </li>
+            <li>
+              <a routerLink="/account" routerLinkActive="active" ariaCurrentWhenActive="page">{{
+                t('nav.account')
+              }}</a>
+            </li>
+          }
+          @if (auth.isAdmin()) {
+            <li>
+              <a routerLink="/admin/users" routerLinkActive="active" ariaCurrentWhenActive="page">{{
+                t('nav.adminUsers')
+              }}</a>
+            </li>
+          }
+          <li>
+            <a routerLink="/accessibility" routerLinkActive="active" ariaCurrentWhenActive="page">
+              {{ t('nav.accessibility') }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="language">
+          <!-- The label stays in all three languages so it can be found by someone who cannot read the current one. -->
+          <label for="language-select" class="sr-only">Langue / Language / اللغة</label>
+          <select id="language-select" [value]="language.lang()" (change)="changeLanguage($event)">
+            @for (item of languages; track item.code) {
+              <option
+                [value]="item.code"
+                [attr.lang]="item.code"
+                [selected]="item.code === language.lang()"
+              >
+                {{ item.name }}
+              </option>
+            }
+          </select>
+        </div>
+
+        @if (auth.isSignedIn()) {
+          <button matButton="outlined" type="button" (click)="signOut()">
+            {{ t('nav.signOut') }}
+          </button>
+        } @else {
+          <a matButton="outlined" routerLink="/auth/login">{{ t('nav.signIn') }}</a>
+          <a matButton="filled" routerLink="/auth/register">{{ t('nav.register') }}</a>
+        }
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container app-main">
+    <router-outlet />
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p class="muted">© {{ year }} InclusiveCare. {{ t('shell.footerNote') }}</p>
+    </div>
+  </footer>
+</div>

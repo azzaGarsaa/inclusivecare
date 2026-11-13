@@ -1,0 +1,247 @@
+{
+  "shell": {
+    "skipToContent": "Aller au contenu principal",
+    "mainNavigation": "Navigation principale",
+    "footerNote": "Conçu pour être utilisable par toutes et tous."
+  },
+  "nav": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "account": "Mon compte",
+    "adminUsers": "Utilisateurs",
+    "accessibility": "Réglages d'affichage",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "register": "Créer un compte"
+  },
+  "titles": {
+    "home": "Accueil",
+    "login": "Connexion",
+    "register": "Créer un compte",
+    "verifyEmail": "Confirmation de l'adresse e-mail",
+    "forgotPassword": "Mot de passe oublié",
+    "resetPassword": "Choisir un nouveau mot de passe",
+    "dashboard": "Tableau de bord",
+    "account": "Mon compte",
+    "accessibility": "Réglages d'affichage",
+    "adminUsers": "Gestion des utilisateurs",
+    "adminUser": "Fiche utilisateur",
+    "notFound": "Page introuvable"
+  },
+  "common": {
+    "pleaseWait": "Veuillez patienter…",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "loading": "Chargement…",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {{ page }} sur {{ total }}"
+  },
+  "fields": {
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "passwordHint": "Au moins 10 caractères. Quelques mots faciles à retenir conviennent très bien.",
+    "showPassword": "Afficher",
+    "hidePassword": "Masquer"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire.",
+    "email": "Saisissez une adresse e-mail valide, par exemple nom@exemple.com.",
+    "minLength": "Utilisez au moins {{ min }} caractères.",
+    "maxLength": "Utilisez au plus {{ max }} caractères.",
+    "invalid": "Cette valeur n'est pas valide."
+  },
+  "errors": {
+    "VALIDATION_FAILED": "Certaines informations ne sont pas valides. Vérifiez le formulaire puis réessayez.",
+    "UNAUTHENTICATED": "Veuillez vous connecter pour continuer.",
+    "FORBIDDEN": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "NOT_FOUND": "Nous n'avons pas trouvé ce que vous cherchez.",
+    "RATE_LIMITED": "Trop de tentatives. Patientez une minute puis réessayez.",
+    "INVALID_CREDENTIALS": "L'adresse e-mail ou le mot de passe est incorrect.",
+    "EMAIL_NOT_VERIFIED": "Votre adresse e-mail n'a pas encore été confirmée. Utilisez le lien que nous vous avons envoyé.",
+    "ACCOUNT_SUSPENDED": "Ce compte a été suspendu. Veuillez contacter l'assistance.",
+    "TOKEN_INVALID": "Ce lien n'est plus valide. Il a peut-être expiré ou déjà été utilisé.",
+    "WRONG_PASSWORD": "Le mot de passe actuel est incorrect.",
+    "CANNOT_MODIFY_SELF": "Vous ne pouvez pas modifier vos propres rôles ni votre statut.",
+    "LAST_ADMIN": "Il s'agit du dernier compte administrateur : il ne peut pas être supprimé.",
+    "NETWORK": "Impossible de joindre le serveur. Vérifiez votre connexion puis réessayez.",
+    "UNKNOWN": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "login": {
+    "title": "Connexion",
+    "sessionExpired": "Votre session a pris fin. Veuillez vous reconnecter.",
+    "resendVerification": "Renvoyer l'e-mail de confirmation",
+    "submit": "Se connecter",
+    "forgotPassword": "J'ai oublié mon mot de passe",
+    "noAccount": "Pas encore de compte ?",
+    "createAccount": "Créer un compte"
+  },
+  "register": {
+    "title": "Créer un compte",
+    "intro": "Un compte vous permet de gérer vos informations au même endroit. Nous ne demandons que le nécessaire.",
+    "acceptTerms": "J'accepte les conditions d'utilisation et la politique de confidentialité",
+    "termsRequired": "Vous devez accepter les conditions pour créer un compte.",
+    "submit": "Créer mon compte",
+    "haveAccount": "Vous avez déjà un compte ?"
+  },
+  "checkEmail": {
+    "title": "Consultez votre boîte de réception",
+    "sent": "Nous avons envoyé un lien de confirmation à {{ email }}.",
+    "instructions": "Ouvrez l'e-mail et suivez le lien pour activer votre compte. Le lien est valable 24 heures. Si vous ne le trouvez pas, regardez dans vos courriers indésirables.",
+    "resend": "Renvoyer l'e-mail",
+    "resent": "Si votre compte doit encore être confirmé, un nouvel e-mail vient d'être envoyé."
+  },
+  "verifyEmail": {
+    "title": "Confirmation de l'adresse e-mail",
+    "verifying": "Confirmation de votre adresse e-mail en cours…",
+    "success": "Votre adresse e-mail est confirmée. Vous pouvez maintenant vous connecter.",
+    "failed": "Nous n'avons pas pu confirmer votre adresse e-mail.",
+    "failedHelp": "Le lien a peut-être expiré ou déjà été utilisé. Essayez de vous connecter : si votre adresse doit encore être confirmée, vous pourrez demander un nouveau lien."
+  },
+  "forgotPassword": {
+    "title": "Mot de passe oublié",
+    "intro": "Saisissez votre adresse e-mail et nous vous enverrons un lien pour choisir un nouveau mot de passe.",
+    "sent": "Si un compte existe pour cette adresse, un lien de réinitialisation a été envoyé. Il est valable 1 heure.",
+    "submit": "Envoyer le lien",
+    "backToLogin": "Retour à la connexion"
+  },
+  "resetPassword": {
+    "title": "Choisir un nouveau mot de passe",
+    "success": "Votre mot de passe a été modifié. Vous pouvez maintenant vous connecter.",
+    "requestNew": "Demander un nouveau lien",
+    "submit": "Modifier mon mot de passe"
+  },
+  "home": {
+    "title": "Équipements, soins et services, réunis en un lieu accessible",
+    "lead": "InclusiveCare rassemble ce dont les personnes en situation de handicap, leurs familles et leurs aidants ont besoin au quotidien.",
+    "goToDashboard": "Accéder à mon tableau de bord",
+    "promisesTitle": "Nos engagements",
+    "promises": {
+      "accessible": {
+        "title": "Accessible dès la conception",
+        "text": "Fonctionne au clavier, avec un lecteur d'écran ou sur téléphone. Ajustez la taille du texte et le contraste à tout moment."
+      },
+      "private": {
+        "title": "Vos données vous appartiennent",
+        "text": "Nous collectons le strict nécessaire et vous pouvez supprimer votre compte quand vous le souhaitez."
+      },
+      "multilingual": {
+        "title": "Dans votre langue",
+        "text": "Disponible en français, en anglais et en arabe."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "La page demandée n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "dashboard": {
+    "welcome": "Bienvenue, {{ name }}",
+    "intro": "Voici votre point de départ. D'autres services apparaîtront ici au fur et à mesure de leur ouverture.",
+    "account": {
+      "title": "Mon compte",
+      "text": "Modifier votre nom, changer de mot de passe ou supprimer votre compte."
+    },
+    "accessibility": {
+      "title": "Réglages d'affichage",
+      "text": "Taille du texte, contraste, animations et affichage simplifié."
+    },
+    "adminUsers": {
+      "title": "Gestion des utilisateurs",
+      "text": "Rechercher des utilisateurs, gérer leurs rôles et suspendre des comptes."
+    }
+  },
+  "account": {
+    "title": "Mon compte",
+    "profile": {
+      "title": "Informations personnelles",
+      "email": "Adresse e-mail : {{ email }}",
+      "saved": "Vos informations ont été enregistrées."
+    },
+    "password": {
+      "title": "Mot de passe",
+      "intro": "Changer de mot de passe vous déconnecte de vos autres appareils.",
+      "saved": "Votre mot de passe a été modifié.",
+      "submit": "Modifier mon mot de passe"
+    },
+    "delete": {
+      "title": "Supprimer mon compte",
+      "intro": "Cette action ferme votre compte et efface vos informations personnelles. Elle est irréversible. Saisissez votre mot de passe pour confirmer votre identité.",
+      "submit": "Supprimer mon compte",
+      "confirmTitle": "Supprimer votre compte ?",
+      "confirmMessage": "Votre compte sera fermé et vos informations personnelles effacées. Cette action est irréversible."
+    }
+  },
+  "a11y": {
+    "title": "Réglages d'affichage",
+    "intro": "Adaptez l'apparence d'InclusiveCare. Les changements s'appliquent immédiatement.",
+    "fontScale": {
+      "legend": "Taille du texte",
+      "100": "Standard",
+      "112": "Grande",
+      "125": "Plus grande",
+      "150": "Très grande"
+    },
+    "contrast": {
+      "legend": "Contraste",
+      "default": "Standard",
+      "high": "Contraste élevé"
+    },
+    "other": {
+      "legend": "Autres réglages",
+      "reducedMotion": "Réduire les animations",
+      "simplified": "Affichage simplifié"
+    },
+    "savedAutomatically": "Vos choix sont enregistrés automatiquement sur cet appareil, et sur votre compte lorsque vous êtes connecté.",
+    "reset": "Rétablir les réglages par défaut"
+  },
+  "adminUsers": {
+    "title": "Gestion des utilisateurs",
+    "filters": "Rechercher des utilisateurs",
+    "search": "Nom ou e-mail",
+    "role": "Rôle",
+    "status": "Statut",
+    "any": "Tous",
+    "apply": "Rechercher",
+    "resultCount": "{{ total }} utilisateurs trouvés",
+    "pagination": "Pages de résultats",
+    "columns": {
+      "name": "Nom",
+      "created": "Inscription"
+    }
+  },
+  "adminUser": {
+    "back": "Retour à la liste des utilisateurs",
+    "lastLogin": "Dernière connexion",
+    "never": "Jamais",
+    "selfNotice": "Il s'agit de votre propre compte. Les administrateurs ne peuvent pas modifier leurs propres rôles ni leur statut.",
+    "rolesTitle": "Rôles",
+    "saveRoles": "Enregistrer les rôles",
+    "rolesSaved": "Les rôles ont été mis à jour.",
+    "accessTitle": "Accès au compte",
+    "suspendHelp": "La suspension déconnecte immédiatement l'utilisateur et l'empêche de se connecter.",
+    "suspend": "Suspendre le compte",
+    "reactivateHelp": "Ce compte est suspendu. Le réactiver permet à l'utilisateur de se connecter à nouveau.",
+    "reactivate": "Réactiver le compte",
+    "suspendConfirmTitle": "Suspendre ce compte ?",
+    "suspendConfirmMessage": "{{ name }} sera immédiatement déconnecté et ne pourra plus se connecter.",
+    "suspended": "Le compte a été suspendu.",
+    "reactivated": "Le compte a été réactivé."
+  },
+  "roles": {
+    "USER": "Utilisateur",
+    "MODERATOR": "Modérateur",
+    "ADMIN": "Administrateur"
+  },
+  "statuses": {
+    "ACTIVE": "Actif",
+    "PENDING_VERIFICATION": "En attente de confirmation de l'e-mail",
+    "SUSPENDED": "Suspendu",
+    "DEACTIVATED": "Supprimé"
+  }
+}

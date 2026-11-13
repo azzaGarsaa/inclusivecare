@@ -1,0 +1,258 @@
+@use '@angular/material' as mat;
+
+// ---------------------------------------------------------------------------
+// Theme
+// All sizes are in rem so the "text size" accessibility setting, which changes
+// the root font size, scales the whole interface.
+// ---------------------------------------------------------------------------
+
+$font-stack:
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Noto Sans',
+  'Noto Sans Arabic',
+  Tahoma,
+  Arial,
+  sans-serif;
+
+html {
+  color-scheme: light;
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$cyan-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: $font-stack,
+      density: 0,
+    )
+  );
+  @include mat.strong-focus-indicators();
+
+  --ic-brand: #0b6e6e;
+  --ic-brand-strong: #084f4f;
+  --ic-on-brand: #ffffff;
+  --ic-text: #1f2933;
+  --ic-text-muted: #4a5763;
+  --ic-surface: #ffffff;
+  --ic-surface-soft: #f3f8f7;
+  --ic-border: #8a97a3;
+  --ic-focus: #b3261e;
+  --ic-success-bg: #e3f4e8;
+  --ic-success-text: #14532d;
+  --ic-error-bg: #fdecea;
+  --ic-error-text: #8c1d18;
+  --ic-info-bg: #e6f2f1;
+  --ic-info-text: #084f4f;
+  --ic-radius: 0.75rem;
+  --ic-content-width: 70rem;
+}
+
+// High-contrast mode: black on white, darker brand, solid borders.
+html[data-contrast='high'] {
+  @include mat.theme-overrides(
+    (
+      primary: #003b3b,
+      on-primary: #ffffff,
+      surface: #ffffff,
+      on-surface: #000000,
+      on-surface-variant: #000000,
+      outline: #000000,
+      outline-variant: #000000,
+      error: #8c0000,
+    )
+  );
+
+  --ic-brand: #003b3b;
+  --ic-brand-strong: #002626;
+  --ic-text: #000000;
+  --ic-text-muted: #000000;
+  --ic-surface-soft: #ffffff;
+  --ic-border: #000000;
+  --ic-focus: #0000c8;
+  --ic-success-bg: #ffffff;
+  --ic-success-text: #003b00;
+  --ic-error-bg: #ffffff;
+  --ic-error-text: #8c0000;
+  --ic-info-bg: #ffffff;
+  --ic-info-text: #000000;
+}
+
+// ---------------------------------------------------------------------------
+// Base
+// ---------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ic-text);
+  background: var(--ic-surface);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin-block: 0 0.75rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin-block: 0 1rem;
+  max-width: 70ch;
+}
+
+a {
+  color: var(--ic-brand);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    color: var(--ic-brand-strong);
+    text-decoration-thickness: 0.16em;
+  }
+}
+
+// One clearly visible focus style everywhere (WCAG 2.4.7, 2.4.13).
+:focus-visible {
+  outline: 0.1875rem solid var(--ic-focus);
+  outline-offset: 0.125rem;
+  border-radius: 0.25rem;
+}
+
+// Headings and <main> receive focus after navigation; they are not controls,
+// so they do not need a ring.
+h1[tabindex='-1']:focus,
+main:focus {
+  outline: none;
+}
+
+// Sticky header must never hide the focused element (WCAG 2.4.11).
+html {
+  scroll-padding-top: 6rem;
+}
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ic-content-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.stack > * + * {
+  margin-block-start: 1rem;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.muted {
+  color: var(--ic-text-muted);
+}
+
+.card {
+  background: var(--ic-surface);
+  border: 1px solid var(--ic-border);
+  border-radius: var(--ic-radius);
+  padding: 1.5rem;
+}
+
+.narrow {
+  max-width: 34rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 0.5rem;
+}
+
+// Comfortable targets for every Material button (WCAG 2.5.8 asks for 24px; we use 44px).
+.mat-mdc-button-base {
+  min-height: 2.75rem;
+}
+
+// ---------------------------------------------------------------------------
+// Accessibility settings
+// ---------------------------------------------------------------------------
+
+@mixin no-motion {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @include no-motion;
+}
+
+html[data-reduced-motion='true'] {
+  @include no-motion;
+}
+
+// Simplified layout: one column, no decoration.
+html[data-simplified='true'] {
+  --ic-content-width: 44rem;
+
+  .decorative {
+    display: none !important;
+  }
+}

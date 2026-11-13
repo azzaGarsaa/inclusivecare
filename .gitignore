@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.test
+*.log
+.DS_Store
+
+# Angular
+apps/web/.angular/
+apps/web/out-tsc/
+
+# Generated Prisma client (rebuilt by `npm run db:generate -w api`)
+apps/api/src/generated/
+
+# Playwright
+e2e/test-results/
+e2e/playwright-report/
+
+# TypeScript incremental build info
+*.tsbuildinfo

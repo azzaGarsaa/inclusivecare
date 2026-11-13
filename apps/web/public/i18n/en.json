@@ -1,0 +1,247 @@
+{
+  "shell": {
+    "skipToContent": "Skip to main content",
+    "mainNavigation": "Main navigation",
+    "footerNote": "Built to be usable by everyone."
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "account": "My account",
+    "adminUsers": "Users",
+    "accessibility": "Display settings",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "register": "Create an account"
+  },
+  "titles": {
+    "home": "Home",
+    "login": "Sign in",
+    "register": "Create an account",
+    "verifyEmail": "Email confirmation",
+    "forgotPassword": "Forgotten password",
+    "resetPassword": "Choose a new password",
+    "dashboard": "Dashboard",
+    "account": "My account",
+    "accessibility": "Display settings",
+    "adminUsers": "User management",
+    "adminUser": "User details",
+    "notFound": "Page not found"
+  },
+  "common": {
+    "pleaseWait": "Please wait…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading…",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{ page }} of {{ total }}"
+  },
+  "fields": {
+    "email": "Email address",
+    "password": "Password",
+    "newPassword": "New password",
+    "currentPassword": "Current password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "passwordHint": "At least 10 characters. A few words you can remember work well.",
+    "showPassword": "Show",
+    "hidePassword": "Hide"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Enter a valid email address, for example name@example.com.",
+    "minLength": "Use at least {{ min }} characters.",
+    "maxLength": "Use at most {{ max }} characters.",
+    "invalid": "This value is not valid."
+  },
+  "errors": {
+    "VALIDATION_FAILED": "Some of the information is not valid. Please check the form and try again.",
+    "UNAUTHENTICATED": "Please sign in to continue.",
+    "FORBIDDEN": "You are not allowed to do this.",
+    "NOT_FOUND": "We could not find what you were looking for.",
+    "RATE_LIMITED": "Too many attempts. Please wait a minute and try again.",
+    "INVALID_CREDENTIALS": "The email address or password is incorrect.",
+    "EMAIL_NOT_VERIFIED": "Your email address has not been confirmed yet. Use the link we emailed you.",
+    "ACCOUNT_SUSPENDED": "This account has been suspended. Please contact support.",
+    "TOKEN_INVALID": "This link is no longer valid. It may have expired or already been used.",
+    "WRONG_PASSWORD": "The current password is incorrect.",
+    "CANNOT_MODIFY_SELF": "You cannot change your own roles or status.",
+    "LAST_ADMIN": "This is the last administrator account, so it cannot be deleted.",
+    "NETWORK": "We could not reach the server. Check your connection and try again.",
+    "UNKNOWN": "Something went wrong. Please try again."
+  },
+  "login": {
+    "title": "Sign in",
+    "sessionExpired": "Your session has ended. Please sign in again.",
+    "resendVerification": "Send the confirmation email again",
+    "submit": "Sign in",
+    "forgotPassword": "I forgot my password",
+    "noAccount": "No account yet?",
+    "createAccount": "Create one"
+  },
+  "register": {
+    "title": "Create an account",
+    "intro": "An account lets you manage your information in one place. We only ask for what we need.",
+    "acceptTerms": "I accept the terms of use and the privacy policy",
+    "termsRequired": "You need to accept the terms to create an account.",
+    "submit": "Create my account",
+    "haveAccount": "Already have an account?"
+  },
+  "checkEmail": {
+    "title": "Check your inbox",
+    "sent": "We sent a confirmation link to {{ email }}.",
+    "instructions": "Open the email and follow the link to activate your account. The link is valid for 24 hours. If you cannot find it, look in your spam folder.",
+    "resend": "Send the email again",
+    "resent": "If your account still needs confirming, a new email is on its way."
+  },
+  "verifyEmail": {
+    "title": "Email confirmation",
+    "verifying": "Confirming your email address…",
+    "success": "Your email address is confirmed. You can now sign in.",
+    "failed": "We could not confirm your email address.",
+    "failedHelp": "The link may have expired or already been used. Try signing in: if your address still needs confirming, you can ask for a new link there."
+  },
+  "forgotPassword": {
+    "title": "Forgotten password",
+    "intro": "Enter your email address and we will send you a link to choose a new password.",
+    "sent": "If an account exists for this address, a reset link has been sent. It is valid for 1 hour.",
+    "submit": "Send the link",
+    "backToLogin": "Back to sign in"
+  },
+  "resetPassword": {
+    "title": "Choose a new password",
+    "success": "Your password has been changed. You can now sign in.",
+    "requestNew": "Request a new link",
+    "submit": "Change my password"
+  },
+  "home": {
+    "title": "Equipment, care and services, in one accessible place",
+    "lead": "InclusiveCare brings together what people with disabilities, their families and their caregivers need every day.",
+    "goToDashboard": "Go to my dashboard",
+    "promisesTitle": "What you can count on",
+    "promises": {
+      "accessible": {
+        "title": "Accessible by design",
+        "text": "Works with a keyboard, a screen reader or a phone. Adjust text size and contrast at any time."
+      },
+      "private": {
+        "title": "Your data stays yours",
+        "text": "We collect as little as possible, and you can delete your account whenever you want."
+      },
+      "multilingual": {
+        "title": "In your language",
+        "text": "Available in French, English and Arabic."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you asked for does not exist or has moved.",
+    "backHome": "Back to the home page"
+  },
+  "dashboard": {
+    "welcome": "Welcome, {{ name }}",
+    "intro": "This is your starting point. More services will appear here as they open.",
+    "account": {
+      "title": "My account",
+      "text": "Update your name, change your password or delete your account."
+    },
+    "accessibility": {
+      "title": "Display settings",
+      "text": "Text size, contrast, animations and simplified layout."
+    },
+    "adminUsers": {
+      "title": "User management",
+      "text": "Find users, manage their roles and suspend accounts."
+    }
+  },
+  "account": {
+    "title": "My account",
+    "profile": {
+      "title": "Personal information",
+      "email": "Email address: {{ email }}",
+      "saved": "Your information has been saved."
+    },
+    "password": {
+      "title": "Password",
+      "intro": "Changing your password signs you out on your other devices.",
+      "saved": "Your password has been changed.",
+      "submit": "Change my password"
+    },
+    "delete": {
+      "title": "Delete my account",
+      "intro": "This closes your account and erases your personal information. It cannot be undone. Enter your password to confirm it is you.",
+      "submit": "Delete my account",
+      "confirmTitle": "Delete your account?",
+      "confirmMessage": "Your account will be closed and your personal information erased. This cannot be undone."
+    }
+  },
+  "a11y": {
+    "title": "Display settings",
+    "intro": "Adjust how InclusiveCare looks. Changes apply immediately.",
+    "fontScale": {
+      "legend": "Text size",
+      "100": "Standard",
+      "112": "Large",
+      "125": "Larger",
+      "150": "Largest"
+    },
+    "contrast": {
+      "legend": "Contrast",
+      "default": "Standard",
+      "high": "High contrast"
+    },
+    "other": {
+      "legend": "Other settings",
+      "reducedMotion": "Reduce animations",
+      "simplified": "Simplified layout"
+    },
+    "savedAutomatically": "Your choices are saved automatically on this device, and on your account when you are signed in.",
+    "reset": "Restore default settings"
+  },
+  "adminUsers": {
+    "title": "User management",
+    "filters": "Search users",
+    "search": "Name or email",
+    "role": "Role",
+    "status": "Status",
+    "any": "All",
+    "apply": "Search",
+    "resultCount": "{{ total }} users found",
+    "pagination": "Result pages",
+    "columns": {
+      "name": "Name",
+      "created": "Registered"
+    }
+  },
+  "adminUser": {
+    "back": "Back to the list of users",
+    "lastLogin": "Last sign-in",
+    "never": "Never",
+    "selfNotice": "This is your own account. Administrators cannot change their own roles or status.",
+    "rolesTitle": "Roles",
+    "saveRoles": "Save roles",
+    "rolesSaved": "Roles have been updated.",
+    "accessTitle": "Account access",
+    "suspendHelp": "Suspending signs the user out immediately and prevents them from signing in.",
+    "suspend": "Suspend account",
+    "reactivateHelp": "This account is suspended. Reactivating lets the user sign in again.",
+    "reactivate": "Reactivate account",
+    "suspendConfirmTitle": "Suspend this account?",
+    "suspendConfirmMessage": "{{ name }} will be signed out immediately and will not be able to sign in.",
+    "suspended": "The account has been suspended.",
+    "reactivated": "The account has been reactivated."
+  },
+  "roles": {
+    "USER": "User",
+    "MODERATOR": "Moderator",
+    "ADMIN": "Administrator"
+  },
+  "statuses": {
+    "ACTIVE": "Active",
+    "PENDING_VERIFICATION": "Awaiting email confirmation",
+    "SUSPENDED": "Suspended",
+    "DEACTIVATED": "Deleted"
+  }
+}
