@@ -155,7 +155,8 @@ test('an administrator finds a user, suspends the account and reactivates it', a
   await page.goto('/admin/users');
   await page.getByLabel('Name or email').fill(ADMIN.email);
   await page.getByRole('button', { name: 'Search' }).click();
-  await page.getByRole('link', { name: 'Salma Admin' }).click();
+  // Found by email: the demo admin's name may have been edited in a development database.
+  await page.getByRole('row', { name: ADMIN.email }).getByRole('link').click();
   await expect(page.getByText('This is your own account.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Save roles' })).toHaveCount(0);
 });
