@@ -102,7 +102,7 @@ jobs:
       # Uses the Google Chrome preinstalled on GitHub's Ubuntu runners (channel: 'chrome').
       - run: npm run test:browser
       - if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: playwright-traces
           path: e2e/test-results/

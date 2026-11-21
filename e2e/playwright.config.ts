@@ -12,7 +12,8 @@ export default defineConfig({
   // One worker and a fixed order: the tests share accounts and the sign-in rate limit.
   workers: 1,
   fullyParallel: false,
-  reporter: [['list']],
+  // On CI, failures also appear as annotations on the workflow run.
+  reporter: process.env.CI ? [['list'], ['github']] : [['list']],
   use: {
     baseURL: 'http://localhost:4200',
     // Uses the Chrome already installed on the machine instead of downloading a browser.
