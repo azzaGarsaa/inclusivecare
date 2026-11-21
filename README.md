@@ -58,7 +58,7 @@ Created by the seed. All use the password `InclusiveCare-dev-2026`. Every person
 | `npm test` | Unit tests of both apps |
 | `npm run test:e2e` | API integration tests against the `inclusivecare_test` database |
 | `npm run test:browser` | Browser journeys and accessibility scans (Playwright, axe) |
-| `npm run lint` | Lint the API |
+| `npm run lint` | Lint both apps (oxlint for the API; ESLint with Angular template accessibility rules for the web app) |
 | `npm run api:types` | Regenerate the web app's API types from the API's OpenAPI document |
 | `npm run db:migrate -w api` | Create and apply a migration after changing the Prisma schema |
 | `npm run db:seed -w api` | Load or reset the demo accounts |
@@ -67,12 +67,26 @@ Created by the seed. All use the password `InclusiveCare-dev-2026`. Every person
 The browser tests need the infrastructure running and the demo accounts seeded. They start the
 API and the web app themselves if they are not already running.
 
+## Continuous integration
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every push to `main` and on every pull
+request, in three parallel jobs:
+
+- lint, build and unit tests of both apps;
+- API integration tests against a fresh PostgreSQL database;
+- browser journeys and accessibility scans against a freshly migrated and seeded database.
+
+The jobs write their own `.env` files from `apps/api/.env.example` with a random JWT secret, so
+no secret is stored in the repository. When the browser job fails, its Playwright traces are kept
+as a downloadable artifact for 7 days.
+
 ## Repository layout
 
 ```
 apps/api      NestJS API (modular monolith)
 apps/web      Angular application
 e2e           Playwright browser tests
+.github       CI workflow
 docs          Architecture notes, checklist, roadmap
 infra         Local infrastructure configuration
 tools         Scripts (roadmap PDF generator)

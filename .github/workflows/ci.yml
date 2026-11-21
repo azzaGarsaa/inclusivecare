@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, build and unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # The API linter is type-aware and needs the generated Prisma client.
+      - run: npm run db:generate -w api
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+  api-integration:
+    name: API integration tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_USER: inclusivecare
+          POSTGRES_PASSWORD: inclusivecare
+          POSTGRES_DB: inclusivecare_test
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U inclusivecare -d inclusivecare_test"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Write .env.test
+        working-directory: apps/api
+        run: |
+          sed -e 's/^NODE_ENV=.*/NODE_ENV=test/' \
+              -e 's#/inclusivecare?#/inclusivecare_test?#' \
+              -e "s#^JWT_ACCESS_SECRET=.*#JWT_ACCESS_SECRET=$(openssl rand -base64 48)#" \
+              .env.example > .env.test
+      - run: npm run db:generate -w api
+      - run: npm run test:e2e
+
+  browser:
+    name: Browser and accessibility tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgis/postgis:17-3.5
+        env:
+          POSTGRES_USER: inclusivecare
+          POSTGRES_PASSWORD: inclusivecare
+          POSTGRES_DB: inclusivecare
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U inclusivecare -d inclusivecare"
+          --health-interval 5s --health-timeout 3s --health-retries 10
+      mailpit:
+        image: axllent/mailpit:latest
+        ports:
+          - 1025:1025
+          - 8025:8025
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Write .env
+        working-directory: apps/api
+        run: |
+          sed -e "s#^JWT_ACCESS_SECRET=.*#JWT_ACCESS_SECRET=$(openssl rand -base64 48)#" \
+              .env.example > .env
+      - run: npm run db:generate -w api
+      - run: npm run db:deploy -w api
+      - run: npm run db:seed -w api
+      # Uses the Google Chrome preinstalled on GitHub's Ubuntu runners (channel: 'chrome').
+      - run: npm run test:browser
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: e2e/test-results/
+          retention-days: 7

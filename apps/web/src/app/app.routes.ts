@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { adminGuard, authGuard, guestGuard } from './core/auth/auth.guards';
+import { adminGuard, authGuard } from './core/auth/auth.guards';
 
 // `title` values are translation keys, resolved by TranslatedTitleStrategy.
 export const routes: Routes = [

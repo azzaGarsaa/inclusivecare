@@ -17,7 +17,7 @@
     "build": "npm run build -w api && npm run build -w web",
     "test": "npm run test -w api && npm run test -w web",
     "test:e2e": "npm run test:e2e -w api",
-    "lint": "npm run lint -w api",
+    "lint": "npm run lint -w api && npm run lint -w web",
     "api:types": "npm run build -w api && npm run openapi:export -w api -- ../web/openapi.json && npm run api:types -w web",
     "test:api": "npm run test -w api && npm run test:e2e -w api",
     "test:browser": "playwright test --config e2e/playwright.config.ts"

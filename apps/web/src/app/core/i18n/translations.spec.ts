@@ -2,7 +2,9 @@ import ar from '../../../../public/i18n/ar.json';
 import en from '../../../../public/i18n/en.json';
 import fr from '../../../../public/i18n/fr.json';
 
-type Tree = { [key: string]: string | Tree };
+interface Tree {
+  [key: string]: string | Tree;
+}
 
 /** Flattens nested translations to `a.b.c` → text. */
 function flatten(tree: Tree, prefix = ''): Record<string, string> {

@@ -16,8 +16,8 @@ A box is ticked only when the feature is implemented and covered by a passing te
 - [x] Web: French, English and Arabic with runtime switching and right-to-left
 - [x] Web: display settings (text size, contrast, reduced motion, simplified layout)
 - [x] Browser tests with automated accessibility scans
-- [ ] Continuous integration pipeline
-- [ ] Linting for the web app
+- [x] Continuous integration pipeline (GitHub Actions: lint, build, unit, integration, browser and accessibility tests)
+- [x] Linting for the web app (ESLint with Angular template accessibility rules)
 
 ### M1 Identity and profiles
 
